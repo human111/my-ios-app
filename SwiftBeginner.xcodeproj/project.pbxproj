@@ -22,6 +22,7 @@
 		86374FED308B39EA005D158F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		86374FF1308B4239005D158F /* Scene.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Scene.md; sourceTree = "<group>"; };
 		86374FF2308B47F5005D158F /* Image.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Image.md; sourceTree = "<group>"; };
+		86374FF3308BA3ED005D158F /* View.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = View.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +78,7 @@
 				86374FED308B39EA005D158F /* README.md */,
 				86374FF1308B4239005D158F /* Scene.md */,
 				86374FF2308B47F5005D158F /* Image.md */,
+				86374FF3308BA3ED005D158F /* View.md */,
 			);
 			path = readme;
 			sourceTree = "<group>";

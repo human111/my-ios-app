@@ -18,8 +18,7 @@ struct ContentView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             
-            Text("今天吃什么")
-                .font(.title)
+            Text("今天吃什么?")
                 .bold()
             
             if selectedFood != .none {
@@ -27,16 +26,25 @@ struct ContentView: View {
                     .font(.largeTitle)
                     .bold()
                     .foregroundStyle(.green)
+                    .id(selectedFood)
+                    .transition(.asymmetric(
+                        insertion: .opacity.animation(.easeInOut(duration: 0.5).delay(0.2)),
+                        removal: .opacity.animation(.easeInOut(duration: 0.4))
+                    ))
             }
             
-            Button(role: .none) {
+            Button {
                 selectedFood = food.shuffled().first { $0 != selectedFood }
             } label: {
-                Text(selectedFood == .none ? "告诉我" : "换一个").frame(width: 200)
+                // 这里的animation相当于覆盖了外层VStack的动效
+                Text(selectedFood == .none ? "告诉我" : "换一个")
+                    .frame(width: 200)
+                    .animation(.none, value: selectedFood)
+                    .transformEffect(.identity)
             }
             .padding(.bottom, -15)
             
-            Button(role: .none) {
+            Button {
                 selectedFood = .none
             } label: {
                 Text("重置").frame(width: 200)
@@ -51,7 +59,7 @@ struct ContentView: View {
         .buttonStyle(.borderedProminent)
         .buttonBorderShape(.capsule)
         .controlSize(.large)
-        .animation(.easeInOut, value: selectedFood)
+        .animation(.easeInOut(duration: 0.6), value: selectedFood)
     }
 }
 

@@ -11,6 +11,7 @@ Image("myPhoto")
 ```
 
 `.resizable()` 的作用是让图片可以被拉伸填满给定的空间。**顺序很重要**：`.resizable()` 必须写在 `.frame` 之前。
+.resizable是图片特有的，使用时需要紧挨着Image，不然就会报错。
 
 ## 保持比例（最常用）
 

@@ -1,7 +1,7 @@
 //
 //  SwiftBeginnerApp.swift
 //  SwiftBeginner
-//  use github
+//  Use github for recording
 //
 //  Created by ghy on 2026/10/23.
 //
