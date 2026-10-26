@@ -1,0 +1,46 @@
+//
+//  Extensions.swift
+//  SwiftBeginner
+//
+//  Created by ghy on 2026/10/26.
+//
+
+import SwiftUI
+
+// 针对view下，按钮相关样式的打包
+extension View {
+    // 这里建立方法，方法是通过实例本身去调用的
+    func mainButtonStyle() -> some View {
+        buttonStyle(.borderedProminent)
+        .buttonBorderShape(.capsule)
+        .controlSize(.large)
+    }
+    
+    func roundedRectBackground(
+        radius: CGFloat = 8,
+        fill: some ShapeStyle = Color.bg
+    ) -> some View {
+        background(RoundedRectangle(cornerRadius: 8).foregroundStyle(fill))
+    }
+}
+
+// 在Animation下，自定义打包的静态属性
+extension Animation {
+    static let mySpring = Animation.spring(dampingFraction: 0.5)
+    static let myEase = Animation.easeInOut(duration: 0.6)
+}
+
+// 自定义Color相关的静态属性
+extension Color {
+    static let bg = Color(.systemBackground)
+    static let bg2 = Color(.secondarySystemBackground)
+}
+
+extension AnyTransition {
+    static let moveUpWithOpacity = Self.move(edge: .top).combined(with: .opacity)
+    
+    static let delayInsertionOpacity = Self.asymmetric(
+        insertion: .opacity.animation(.easeInOut(duration: 0.5).delay(0.2)),
+        removal: .opacity.animation(.easeInOut(duration: 0.4))
+    )
+}
