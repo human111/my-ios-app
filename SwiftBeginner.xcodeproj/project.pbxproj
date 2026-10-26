@@ -11,6 +11,8 @@
 		86374FE2308B3986005D158F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86374FE1308B3986005D158F /* ContentView.swift */; };
 		86374FE4308B3989005D158F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86374FE3308B3989005D158F /* Assets.xcassets */; };
 		86374FE7308B3989005D158F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86374FE6308B3989005D158F /* Preview Assets.xcassets */; };
+		86374FF6308EE54F005D158F /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86374FF5308EE54F005D158F /* Food.swift */; };
+		86374FF9308EF05E005D158F /* PreviewDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86374FF8308EF05E005D158F /* PreviewDevice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,9 @@
 		86374FF1308B4239005D158F /* Scene.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Scene.md; sourceTree = "<group>"; };
 		86374FF2308B47F5005D158F /* Image.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Image.md; sourceTree = "<group>"; };
 		86374FF3308BA3ED005D158F /* View.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = View.md; sourceTree = "<group>"; };
+		86374FF4308BBA4A005D158F /* shortcutKey.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = shortcutKey.md; sourceTree = "<group>"; };
+		86374FF5308EE54F005D158F /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		86374FF8308EF05E005D158F /* PreviewDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewDevice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +65,8 @@
 				86374FE1308B3986005D158F /* ContentView.swift */,
 				86374FE3308B3989005D158F /* Assets.xcassets */,
 				86374FE5308B3989005D158F /* Preview Content */,
+				86374FF5308EE54F005D158F /* Food.swift */,
+				86374FF8308EF05E005D158F /* PreviewDevice.swift */,
 			);
 			path = SwiftBeginner;
 			sourceTree = "<group>";
@@ -79,6 +86,7 @@
 				86374FF1308B4239005D158F /* Scene.md */,
 				86374FF2308B47F5005D158F /* Image.md */,
 				86374FF3308BA3ED005D158F /* View.md */,
+				86374FF4308BBA4A005D158F /* shortcutKey.md */,
 			);
 			path = readme;
 			sourceTree = "<group>";
@@ -153,8 +161,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86374FF9308EF05E005D158F /* PreviewDevice.swift in Sources */,
 				86374FE2308B3986005D158F /* ContentView.swift in Sources */,
 				86374FE0308B3986005D158F /* SwiftBeginnerApp.swift in Sources */,
+				86374FF6308EE54F005D158F /* Food.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
