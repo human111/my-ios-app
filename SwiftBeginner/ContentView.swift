@@ -36,7 +36,7 @@ struct ContentView: View {
             .animation(.mySpring, value: shouldShowInfo)
             .animation(.myEase, value: selectedFood)
         }
-        .background(Color.bg2)
+        .background(.bg2)
     }
 }
 
@@ -79,29 +79,6 @@ private extension ContentView {
     }
     
     var foodDetailView: some View {
-        // 两种样式的写法，样式一：自定义更强
-//                    HStack {
-//                        VStack(spacing: 12) {
-//                            Text("蛋白质")
-//                            Text("\(selectedFood!.protein.formatted()) g")
-//                        }
-//
-//                        Divider().frame(width: 1).padding(.horizontal)
-//
-//                        VStack(spacing: 12) {
-//                            Text("脂肪")
-//                            Text("\(selectedFood!.fat.formatted()) g")
-//                        }
-//
-//                        Divider().frame(width: 1).padding(.horizontal)
-//
-//                        VStack(spacing: 12) {
-//                            Text("碳水")
-//                            Text("\(selectedFood!.carb.formatted()) g")
-//                        }
-//
-//                    }
-        
         // 加上VStack是为了让info的模块，在制定的区域内进行相应的动画效果
         VStack {
             // 样式二：写法更简洁
@@ -116,14 +93,9 @@ private extension ContentView {
                     Divider().gridCellUnsizedAxes(.horizontal).padding(.horizontal, -10)
                     
                     GridRow {
-                        // 写法一
                         Text(selectedFood!.$protein)
                         Text(selectedFood!.$fat)
                         Text(selectedFood!.$carb)
-                        // 写法二
-//                        buildNutritionNumberText(selectedFood!.protein)
-//                        buildNutritionNumberText(selectedFood!.fat)
-//                        buildNutritionNumberText(selectedFood!.carb)
                     }
                     
                 }
@@ -137,10 +109,6 @@ private extension ContentView {
         .frame(maxWidth: .infinity)
         .clipped()
     }
-    
-//    func buildNutritionNumberText(_ number: Double) -> some View {
-//        Text("\(number.formatted()) g")
-//    }
     
     @ViewBuilder var selectedFoodInfoView: some View {
         if selectedFood != .none {
