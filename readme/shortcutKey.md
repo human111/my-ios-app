@@ -1,5 +1,7 @@
 #  Xcode快捷键
 
+Xcode使用技巧：https://www.youtube.com/watch?v=um5OgZpGC-U
+
 ## 问题一：在使用时，Xcode的怎么快速切换到基本例子的写法，因为根据提示词选中后，会直接出现Button(role: <#T##ButtonRole?#>, action: <#T##() -> Void#>, label: <#T##() -> View#>)的代码，写的时候需要一个一个改
 
 这是 Xcode 补全的常见痛点。有几种办法可以快速得到尾随闭包的写法。

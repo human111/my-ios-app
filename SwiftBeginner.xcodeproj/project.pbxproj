@@ -16,6 +16,7 @@
 		86374FFB308F9469005D158F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86374FFA308F9469005D158F /* Extensions.swift */; };
 		86374FFD308F9842005D158F /* SuffixWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86374FFC308F9842005D158F /* SuffixWrapper.swift */; };
 		86375000309026B8005D158F /* ShapeStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86374FFF309026B8005D158F /* ShapeStyleView.swift */; };
+		863750023090D6DB005D158F /* FoodListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863750013090D6DB005D158F /* FoodListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		86374FFA308F9469005D158F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		86374FFC308F9842005D158F /* SuffixWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixWrapper.swift; sourceTree = "<group>"; };
 		86374FFF309026B8005D158F /* ShapeStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeStyleView.swift; sourceTree = "<group>"; };
+		863750013090D6DB005D158F /* FoodListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,8 +52,8 @@
 		86374FD3308B3986005D158F = {
 			isa = PBXGroup;
 			children = (
-				86374FFE3090268C005D158F /* PracticeUI */,
 				86374FDE308B3986005D158F /* SwiftBeginner */,
+				86374FFE3090268C005D158F /* PracticeUI */,
 				86374FF0308B41E9005D158F /* readme */,
 				86374FDD308B3986005D158F /* Products */,
 			);
@@ -76,6 +78,7 @@
 				86374FF8308EF05E005D158F /* PreviewDevice.swift */,
 				86374FFA308F9469005D158F /* Extensions.swift */,
 				86374FFC308F9842005D158F /* SuffixWrapper.swift */,
+				863750013090D6DB005D158F /* FoodListView.swift */,
 			);
 			path = SwiftBeginner;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				86374FFB308F9469005D158F /* Extensions.swift in Sources */,
 				86374FF9308EF05E005D158F /* PreviewDevice.swift in Sources */,
 				86374FE2308B3986005D158F /* ContentView.swift in Sources */,
+				863750023090D6DB005D158F /* FoodListView.swift in Sources */,
 				86375000309026B8005D158F /* ShapeStyleView.swift in Sources */,
 				86374FE0308B3986005D158F /* SwiftBeginnerApp.swift in Sources */,
 				86374FF6308EE54F005D158F /* Food.swift in Sources */,
