@@ -13,6 +13,9 @@ struct FoodListView: View {
     @State private var foods = Food.examples
     @State private var selectedFood = Set<Food.ID>()
     
+    @State private var shouldShowSheet = false
+    @State private var foodDetailHeight: CGFloat = FoodDetailSheetHeightKey.defaultValue
+    
     var isEditing: Bool { editMode?.wrappedValue == .active }
     
     var body: some View {
@@ -22,7 +25,21 @@ struct FoodListView: View {
             // 这里因为$food是Binding，在用“food in”遍历的时候，要使用wrappedValue才能获取到对象的值
             // 如果不想使用wrappedValue，可以用“$food in”的写法
             List($foods, editActions: .all, selection: $selectedFood) { $food in
-                Text(food.name).padding(.vertical, 10)
+                HStack {
+                    Text(food.name).padding(.vertical, 10)
+                        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            if isEditing { return }
+                            shouldShowSheet = true
+                        }
+                    
+                    if isEditing {
+                        Image(systemName: "pencil")
+                            .font(.title2.bold())
+                            .foregroundColor(.accentColor)
+                    }
+                }
             }
             .listStyle(.plain)
             .padding(.horizontal)
@@ -30,20 +47,20 @@ struct FoodListView: View {
         }
         .background(.groupBg)
         .safeAreaInset(edge: .bottom, content: buildFloatButton)
-        .sheet(isPresented: .constant(true)) {
+        .sheet(isPresented: $shouldShowSheet) {
             // presentationDetents：给sheet设置高度，medium到屏幕中间的位置，height(500)最高500
 //            Text("Hello")
 //                .presentationDetents([.medium, .height(500)])
 //            let food = foods.first!
-            let food = foods[4]
+            let food = foods[0]
             
             // 根据不同的条件，来显示不通的布局（可以理解为动态布局）
-            let shouldVStack = textSize.isAccessibilitySize || food.image.count > 1
-            AnyLayout.useVStack(if: shouldVStack, spacing: 30) {
+            let shouldUseVStack = textSize.isAccessibilitySize || food.image.count > 1
+            AnyLayout.useVStack(if: shouldUseVStack, spacing: 30) {
                 Text(food.image)
                     .font(.system(size: 100))
                     .lineLimit(1)
-                    .minimumScaleFactor(0.5)
+                    .minimumScaleFactor(shouldUseVStack ? 1 : 0.5)
                 
                 Grid(horizontalSpacing: 30, verticalSpacing: 12) {
                     buildNutritionView(title: "热量", value: food.$calorie)
@@ -53,9 +70,28 @@ struct FoodListView: View {
                     
                 }
             }
-            .presentationDetents([.medium])
+            .padding()
+            .padding(.vertical)
+            .overlay {
+                GeometryReader { proxy in
+                    Color.clear.preference(key: FoodDetailSheetHeightKey.self, value: proxy.size.height)
+                }
+            }
+            .onPreferenceChange(FoodDetailSheetHeightKey.self) {
+                foodDetailHeight = $0
+            }
+            .presentationDetents([.height(foodDetailHeight)])
         }
         
+    }
+}
+
+private extension FoodListView {
+    struct FoodDetailSheetHeightKey: PreferenceKey {
+        static var defaultValue: CGFloat = 300
+        static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+            value = nextValue()
+        }
     }
 }
 
@@ -110,7 +146,7 @@ private extension FoodListView {
             HStack {
                 Spacer()
                 addButton
-                    .scaleEffect(isEditing ? 0 : 1)
+                    .scaleEffect(isEditing ? 0.001 : 1)
                     .opacity(isEditing ? 0 : 1)
                     .animation(.easeInOut, value: isEditing)
             }
