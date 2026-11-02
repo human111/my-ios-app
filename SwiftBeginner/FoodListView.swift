@@ -7,14 +7,42 @@
 
 import SwiftUI
 
+private enum Sheet: View, Identifiable {
+    case newFood((Food) -> Void)
+    case editFood(Binding<Food>)
+    case foodDetail(Food)
+    
+    var id: UUID {
+        switch self {
+        case .newFood:
+            return UUID()
+        case .editFood(let binding):
+            return binding.wrappedValue.id
+        case .foodDetail(let food):
+            return food.id
+        }
+    }
+    
+    var body: some View {
+        switch self {
+            case .newFood(let onSubmit):
+                FoodListView.FoodForm(food: .new, onSubmit: onSubmit)
+            case .editFood(let binding):
+                FoodListView.FoodForm(food: binding.wrappedValue) {
+                    binding.wrappedValue = $0
+                }
+            case .foodDetail(let food):
+                FoodListView.FoodDetailSheet(food: food)
+        }
+    }
+}
+
 struct FoodListView: View {
     @Environment(\.editMode) var editMode
-    @Environment(\.dynamicTypeSize) var textSize
     @State private var foods = Food.examples
-    @State private var selectedFood = Set<Food.ID>()
+    @State private var selectedFoodID = Set<Food.ID>()
     
-    @State private var shouldShowSheet = false
-    @State private var foodDetailHeight: CGFloat = FoodDetailSheetHeightKey.defaultValue
+    @State private var sheet: Sheet?
     
     var isEditing: Bool { editMode?.wrappedValue == .active }
     
@@ -24,36 +52,32 @@ struct FoodListView: View {
             
             // 这里因为$food是Binding，在用“food in”遍历的时候，要使用wrappedValue才能获取到对象的值
             // 如果不想使用wrappedValue，可以用“$food in”的写法
-            List($foods, editActions: .all, selection: $selectedFood) { $food in
-                HStack {
-                    Text(food.name).padding(.vertical, 10)
-                        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
-                        .contentShape(Rectangle())
-                        .onTapGesture {
-                            if isEditing { return }
-                            shouldShowSheet = true
-                        }
-                    
-                    if isEditing {
-                        Image(systemName: "pencil")
-                            .font(.title2.bold())
-                            .foregroundColor(.accentColor)
-                    }
-                }
-            }
+            List($foods, editActions: .all, selection: $selectedFoodID, rowContent: buildFoodRaw)
             .listStyle(.plain)
             .padding(.horizontal)
             
         }
         .background(.groupBg)
         .safeAreaInset(edge: .bottom, content: buildFloatButton)
-        .sheet(isPresented: $shouldShowSheet) {
-            // presentationDetents：给sheet设置高度，medium到屏幕中间的位置，height(500)最高500
-//            Text("Hello")
-//                .presentationDetents([.medium, .height(500)])
-//            let food = foods.first!
-            let food = foods[0]
-            
+        .sheet(item: $sheet) { $0 }
+    }
+}
+
+private extension FoodListView {
+    struct FoodDetailSheetHeightKey: PreferenceKey {
+        static var defaultValue: CGFloat = 300
+        static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+            value = nextValue()
+        }
+    }
+    
+    struct FoodDetailSheet: View {
+        @Environment(\.dynamicTypeSize) private var textSize
+        @State private var foodDetailHeight: CGFloat = FoodDetailSheetHeightKey.defaultValue
+        
+        let food: Food
+        
+        var body: some View {
             // 根据不同的条件，来显示不通的布局（可以理解为动态布局）
             let shouldUseVStack = textSize.isAccessibilitySize || food.image.count > 1
             AnyLayout.useVStack(if: shouldUseVStack, spacing: 30) {
@@ -83,14 +107,11 @@ struct FoodListView: View {
             .presentationDetents([.height(foodDetailHeight)])
         }
         
-    }
-}
-
-private extension FoodListView {
-    struct FoodDetailSheetHeightKey: PreferenceKey {
-        static var defaultValue: CGFloat = 300
-        static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-            value = nextValue()
+        func buildNutritionView(title: String, value: String) -> some View {
+            GridRow {
+                Text(title).gridCellAnchor(.leading)
+                Text(value).gridCellAnchor(.trailing)
+            }
         }
     }
 }
@@ -110,7 +131,9 @@ private extension FoodListView {
     }
     
     var addButton: some View {
-        Button {} label: {
+        Button {
+            sheet = .newFood { foods.append($0) }
+        } label: {
             Image(systemName: "plus.circle.fill")
                 .font(.system(size: 50))
                 .padding()
@@ -123,7 +146,7 @@ private extension FoodListView {
         Button {
             // 不想用外层的animation的样式，这里使用withAnimation
             withAnimation {
-                foods = foods.filter { !selectedFood.contains($0.id) }
+                foods = foods.filter { !selectedFoodID.contains($0.id) }
             }
         } label: {
             Text("删除全部")
@@ -153,10 +176,25 @@ private extension FoodListView {
         }
     }
     
-    func buildNutritionView(title: String, value: String) -> some View {
-        GridRow {
-            Text(title).gridCellAnchor(.leading)
-            Text(value).gridCellAnchor(.trailing)
+    func buildFoodRaw(foodBinding: Binding<Food>) -> some View {
+        let food = foodBinding.wrappedValue
+        return HStack {
+            Text(food.name).padding(.vertical, 10)
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    if isEditing { return }
+                    sheet = .foodDetail(food)
+                }
+            
+            if isEditing {
+                Image(systemName: "pencil")
+                    .font(.title2.bold())
+                    .foregroundColor(.accentColor)
+                    .onTapGesture {
+                        sheet = .editFood(foodBinding)
+                    }
+            }
         }
     }
 }

@@ -19,6 +19,7 @@
 		863750023090D6DB005D158F /* FoodListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863750013090D6DB005D158F /* FoodListView.swift */; };
 		8637500430921A72005D158F /* GeometryReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8637500330921A72005D158F /* GeometryReaderView.swift */; };
 		8637500630922A9C005D158F /* GeometryReaderView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8637500530922A9C005D158F /* GeometryReaderView1.swift */; };
+		869CD1F33098C48B00EF4AB0 /* FoodForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869CD1F23098C48B00EF4AB0 /* FoodForm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		863750013090D6DB005D158F /* FoodListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListView.swift; sourceTree = "<group>"; };
 		8637500330921A72005D158F /* GeometryReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderView.swift; sourceTree = "<group>"; };
 		8637500530922A9C005D158F /* GeometryReaderView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderView1.swift; sourceTree = "<group>"; };
+		869CD1F23098C48B00EF4AB0 /* FoodForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodForm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				86374FFA308F9469005D158F /* Extensions.swift */,
 				86374FFC308F9842005D158F /* SuffixWrapper.swift */,
 				863750013090D6DB005D158F /* FoodListView.swift */,
+				869CD1F23098C48B00EF4AB0 /* FoodForm.swift */,
 			);
 			path = SwiftBeginner;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				86375000309026B8005D158F /* ShapeStyleView.swift in Sources */,
 				86374FE0308B3986005D158F /* SwiftBeginnerApp.swift in Sources */,
 				86374FF6308EE54F005D158F /* Food.swift in Sources */,
+				869CD1F33098C48B00EF4AB0 /* FoodForm.swift in Sources */,
 				8637500430921A72005D158F /* GeometryReaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

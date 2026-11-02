@@ -28,4 +28,6 @@ struct Food: Equatable, Identifiable {
         Food(name: "牛肉面", image: "🐮🍜", calorie: 310, carb: 33.2, fat: 6, protein: 6),
         Food(name: "关东煮", image: "🍢", calorie: 90, carb: 4, fat: 5, protein: 7),
     ]
+    
+    static var new: Food { Food(name: "", image: "") }
 }
