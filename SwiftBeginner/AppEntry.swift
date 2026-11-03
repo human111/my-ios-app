@@ -1,5 +1,5 @@
 //
-//  SwiftBeginnerApp.swift
+//  AppEntry.swift
 //  SwiftBeginner
 //  Use github for recording
 //
@@ -9,10 +9,10 @@
 import SwiftUI
 
 @main
-struct SwiftBeginnerApp: App {
+struct AppEntry: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FoodPickerScreen()
         }
     }
 }

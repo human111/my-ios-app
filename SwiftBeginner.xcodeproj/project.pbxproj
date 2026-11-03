@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		86374FE0308B3986005D158F /* SwiftBeginnerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86374FDF308B3986005D158F /* SwiftBeginnerApp.swift */; };
-		86374FE2308B3986005D158F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86374FE1308B3986005D158F /* ContentView.swift */; };
+		86374FE0308B3986005D158F /* AppEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86374FDF308B3986005D158F /* AppEntry.swift */; };
+		86374FE2308B3986005D158F /* FoodPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86374FE1308B3986005D158F /* FoodPickerScreen.swift */; };
 		86374FE4308B3989005D158F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86374FE3308B3989005D158F /* Assets.xcassets */; };
 		86374FE7308B3989005D158F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86374FE6308B3989005D158F /* Preview Assets.xcassets */; };
 		86374FF6308EE54F005D158F /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86374FF5308EE54F005D158F /* Food.swift */; };
@@ -20,12 +20,15 @@
 		8637500430921A72005D158F /* GeometryReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8637500330921A72005D158F /* GeometryReaderView.swift */; };
 		8637500630922A9C005D158F /* GeometryReaderView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8637500530922A9C005D158F /* GeometryReaderView1.swift */; };
 		869CD1F33098C48B00EF4AB0 /* FoodForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869CD1F23098C48B00EF4AB0 /* FoodForm.swift */; };
+		869CD1FE309A210000EF4AB0 /* FoodDetailSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869CD1FD309A210000EF4AB0 /* FoodDetailSheet.swift */; };
+		869CD200309A216600EF4AB0 /* Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869CD1FF309A216600EF4AB0 /* Sheet.swift */; };
+		869CD203309A238400EF4AB0 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869CD202309A238400EF4AB0 /* SFSymbol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		86374FDC308B3986005D158F /* SwiftBeginner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftBeginner.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		86374FDF308B3986005D158F /* SwiftBeginnerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBeginnerApp.swift; sourceTree = "<group>"; };
-		86374FE1308B3986005D158F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		86374FDF308B3986005D158F /* AppEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEntry.swift; sourceTree = "<group>"; };
+		86374FE1308B3986005D158F /* FoodPickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPickerScreen.swift; sourceTree = "<group>"; };
 		86374FE3308B3989005D158F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86374FE6308B3989005D158F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		86374FED308B39EA005D158F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -42,6 +45,10 @@
 		8637500330921A72005D158F /* GeometryReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderView.swift; sourceTree = "<group>"; };
 		8637500530922A9C005D158F /* GeometryReaderView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderView1.swift; sourceTree = "<group>"; };
 		869CD1F23098C48B00EF4AB0 /* FoodForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodForm.swift; sourceTree = "<group>"; };
+		869CD1FD309A210000EF4AB0 /* FoodDetailSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailSheet.swift; sourceTree = "<group>"; };
+		869CD1FF309A216600EF4AB0 /* Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sheet.swift; sourceTree = "<group>"; };
+		869CD202309A238400EF4AB0 /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
+		869CD208309A253A00EF4AB0 /* One.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = One.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,16 +83,14 @@
 		86374FDE308B3986005D158F /* SwiftBeginner */ = {
 			isa = PBXGroup;
 			children = (
-				86374FDF308B3986005D158F /* SwiftBeginnerApp.swift */,
-				86374FE1308B3986005D158F /* ContentView.swift */,
-				86374FE3308B3989005D158F /* Assets.xcassets */,
+				86374FDF308B3986005D158F /* AppEntry.swift */,
+				869CD1FB309A1EDB00EF4AB0 /* CommonViews */,
+				869CD1F4309A1CF700EF4AB0 /* Screen */,
+				869CD1F5309A1DE100EF4AB0 /* Model */,
+				869CD1F6309A1E0200EF4AB0 /* Extensions */,
+				869CD1FC309A1F6600EF4AB0 /* Utils */,
+				869CD1F7309A1E4D00EF4AB0 /* Resource */,
 				86374FE5308B3989005D158F /* Preview Content */,
-				86374FF5308EE54F005D158F /* Food.swift */,
-				86374FF8308EF05E005D158F /* PreviewDevice.swift */,
-				86374FFA308F9469005D158F /* Extensions.swift */,
-				86374FFC308F9842005D158F /* SuffixWrapper.swift */,
-				863750013090D6DB005D158F /* FoodListView.swift */,
-				869CD1F23098C48B00EF4AB0 /* FoodForm.swift */,
 			);
 			path = SwiftBeginner;
 			sourceTree = "<group>";
@@ -101,6 +106,7 @@
 		86374FF0308B41E9005D158F /* readme */ = {
 			isa = PBXGroup;
 			children = (
+				869CD207309A24D500EF4AB0 /* FAQ */,
 				86374FED308B39EA005D158F /* README.md */,
 				86374FF1308B4239005D158F /* Scene.md */,
 				86374FF2308B47F5005D158F /* Image.md */,
@@ -118,6 +124,99 @@
 				8637500530922A9C005D158F /* GeometryReaderView1.swift */,
 			);
 			path = PracticeUI;
+			sourceTree = "<group>";
+		};
+		869CD1F4309A1CF700EF4AB0 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				869CD1F9309A1E9300EF4AB0 /* FoodPicker */,
+				869CD1F8309A1E8B00EF4AB0 /* FoodList */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		869CD1F5309A1DE100EF4AB0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				86374FF5308EE54F005D158F /* Food.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		869CD1F6309A1E0200EF4AB0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				86374FFA308F9469005D158F /* Extensions.swift */,
+				86374FF8308EF05E005D158F /* PreviewDevice.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		869CD1F7309A1E4D00EF4AB0 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				86374FE3308B3989005D158F /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		869CD1F8309A1E8B00EF4AB0 /* FoodList */ = {
+			isa = PBXGroup;
+			children = (
+				869CD1FA309A1EB900EF4AB0 /* views */,
+				863750013090D6DB005D158F /* FoodListView.swift */,
+			);
+			path = FoodList;
+			sourceTree = "<group>";
+		};
+		869CD1F9309A1E9300EF4AB0 /* FoodPicker */ = {
+			isa = PBXGroup;
+			children = (
+				86374FE1308B3986005D158F /* FoodPickerScreen.swift */,
+			);
+			path = FoodPicker;
+			sourceTree = "<group>";
+		};
+		869CD1FA309A1EB900EF4AB0 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				869CD1F23098C48B00EF4AB0 /* FoodForm.swift */,
+				869CD1FD309A210000EF4AB0 /* FoodDetailSheet.swift */,
+				869CD1FF309A216600EF4AB0 /* Sheet.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		869CD1FB309A1EDB00EF4AB0 /* CommonViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CommonViews;
+			sourceTree = "<group>";
+		};
+		869CD1FC309A1F6600EF4AB0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				869CD201309A235200EF4AB0 /* Constant */,
+				86374FFC308F9842005D158F /* SuffixWrapper.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		869CD201309A235200EF4AB0 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				869CD202309A238400EF4AB0 /* SFSymbol.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		869CD207309A24D500EF4AB0 /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				869CD208309A253A00EF4AB0 /* One.md */,
+			);
+			path = FAQ;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,13 +291,16 @@
 			files = (
 				86374FFD308F9842005D158F /* SuffixWrapper.swift in Sources */,
 				86374FFB308F9469005D158F /* Extensions.swift in Sources */,
+				869CD203309A238400EF4AB0 /* SFSymbol.swift in Sources */,
 				86374FF9308EF05E005D158F /* PreviewDevice.swift in Sources */,
-				86374FE2308B3986005D158F /* ContentView.swift in Sources */,
+				86374FE2308B3986005D158F /* FoodPickerScreen.swift in Sources */,
+				869CD1FE309A210000EF4AB0 /* FoodDetailSheet.swift in Sources */,
 				863750023090D6DB005D158F /* FoodListView.swift in Sources */,
 				8637500630922A9C005D158F /* GeometryReaderView1.swift in Sources */,
 				86375000309026B8005D158F /* ShapeStyleView.swift in Sources */,
-				86374FE0308B3986005D158F /* SwiftBeginnerApp.swift in Sources */,
+				86374FE0308B3986005D158F /* AppEntry.swift in Sources */,
 				86374FF6308EE54F005D158F /* Food.swift in Sources */,
+				869CD200309A216600EF4AB0 /* Sheet.swift in Sources */,
 				869CD1F33098C48B00EF4AB0 /* FoodForm.swift in Sources */,
 				8637500430921A72005D158F /* GeometryReaderView.swift in Sources */,
 			);

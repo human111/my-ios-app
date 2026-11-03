@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  FoodPickerScreen.swift
 //  SwiftBeginner
 //
 //  Created by ghy on 2026/10/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct FoodPickerScreen: View {
     @State private var selectedFood: Food?
     @State private var shouldShowInfo: Bool = false
     
@@ -42,7 +42,7 @@ struct ContentView: View {
 
 // MARK: -Subviews
 
-private extension ContentView {
+private extension FoodPickerScreen {
     var foodImage: some View {
         Group {
             if let selectedFood {
@@ -73,7 +73,7 @@ private extension ContentView {
             Button (action: {
                 shouldShowInfo.toggle()
             }, label: {
-                Image(systemName: "info.circle.fill").foregroundColor(.secondary)
+                SFSymbol.info.foregroundColor(.secondary)
             }).buttonStyle(.plain)
         }
     }
@@ -145,7 +145,7 @@ private extension ContentView {
     
 }
 
-extension ContentView {
+extension FoodPickerScreen {
     init(selectFood: Food) {
         _selectedFood = State(wrappedValue: selectFood)
     }
@@ -156,33 +156,33 @@ extension ContentView {
  */
 //struct ContentView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        ContentView()
+//        FoodPickerScreen()
 //    }
 //}
 
 // 也可以不添加("iPhone")，默认就是手机模式。
 //#Preview("iPhone") {
-//    ContentView(selectFood: .examples.first!)
+//    FoodPickerScreen(selectFood: .examples.first!)
 //    // 设置一个ipad的预览
-////    ContentView(selectFood: .examples.first!).previewDevice(.iPad)
+////    FoodPickerScreen(selectFood: .examples.first!).previewDevice(.iPad)
 //}
 
 // .previewDevice(...) 这个修饰符在 #Preview 宏里基本不生效,它是给旧的 PreviewProvider 用的。
 // #Preview 里的设备由画布底部的设备按钮决定。
 //#Preview("iPhone 15 Pro") {
-//    ContentView(selectFood: .examples.first!)
+//    FoodPickerScreen(selectFood: .examples.first!)
 //        .previewDevice(PreviewDevice(rawValue: "iPhone 15 Pro"))
 //}
 //
 //#Preview("iPad Pro 11") {
-//    ContentView(selectFood: .examples.first!)
+//    FoodPickerScreen(selectFood: .examples.first!)
 //        .previewDevice(PreviewDevice(rawValue: "iPad Pro (11-inch) (4th generation)"))
 //}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView(selectFood: .examples.first!)
+            FoodPickerScreen(selectFood: .examples.first!)
                 .previewDevice(PreviewDevice(rawValue: "iPhone 15 Pro"))
                 .previewDisplayName("iPhone")
             

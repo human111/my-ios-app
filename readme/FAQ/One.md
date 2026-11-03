@@ -57,3 +57,104 @@ struct Skill: Identifiable {
 ### 为什么不写会报错
 
 不写 `id:` 时，编译器会提示类似 `Generic struct 'ForEach' requires that 'String' conform to 'Identifiable'`，就是在说 `String` 没有 `id`，需要你手动指定。
+
+
+## 书写闭包时，报错
+
+这个报错的原因是：你把闭包的类型 `(Food) -> Void` 写成了闭包的实际值。
+
+你的代码：
+
+```
+#Preview {
+    FoodListView.FoodForm(
+        food: Food.examples.first!,
+        onSubmit: (Food) -> Void
+    )
+}
+```
+
+`(Food) -> Void` 表示一个函数类型，而 `onSubmit` 参数需要的是一个实际的闭包。
+
+### 1. 最简单的修改方式
+
+如果 Preview 只是用来预览界面，不需要执行提交逻辑，可以传入一个空闭包：
+
+```
+#Preview {
+    FoodListView.FoodForm(
+        food: Food.examples.first!,
+        onSubmit: { _ in }
+    )
+}
+```
+
+其中：
+
+```
+{ _ in }
+```
+
+表示接收一个 `Food` 参数，但是不使用它，也不执行任何操作。
+
+### 2. 如果想查看提交的数据
+
+可以这样写：
+
+```
+#Preview {
+    FoodListView.FoodForm(
+        food: Food.examples.first!,
+        onSubmit: { food in
+            print("提交食物：\(food)")
+        }
+    )
+}
+```
+
+这样点击提交时，就会执行闭包中的代码。
+
+### 3. 为什么不能直接写 `(Food) -> Void`？
+
+假设你的 View 定义如下：
+
+```
+struct FoodForm: View {
+    let food: Food
+    let onSubmit: (Food) -> Void
+
+    var body: some View {
+        Button("提交") {
+            onSubmit(food)
+        }
+    }
+}
+```
+
+这里：
+
+```
+let onSubmit: (Food) -> Void
+```
+
+表示 `onSubmit` 的类型是一个接收 `Food` 并且没有返回值的函数。
+
+而：
+
+```
+onSubmit: { food in
+    print(food)
+}
+```
+
+才是一个实际的函数值。
+
+可以理解为：
+
+| 写法                        | 含义   |
+| ------------------------- | ---- |
+| `(Food) -> Void`          | 函数类型 |
+| `{ food in print(food) }` | 实际闭包 |
+| `{ _ in }`                | 空闭包  |
+
+因此，你目前的 Preview 直接使用 `{ _ in }` 就可以解决问题。
