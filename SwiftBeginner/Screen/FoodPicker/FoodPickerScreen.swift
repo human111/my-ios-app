@@ -14,29 +14,32 @@ struct FoodPickerScreen: View {
     let food = Food.examples
     
     var body: some View {
-        ScrollView {
-            VStack(spacing: 30) {
-                foodImage
-                
-                Text("今天吃什么?").bold()
-                
-                selectedFoodInfoView
+        GeometryReader { proxy in
+            ScrollView {
+                VStack(spacing: 30) {
+                    foodImage
+                    
+                    Text("今天吃什么?").font(.title.bold())
+                    
+                    selectedFoodInfoView
 
-                // 填满剩余的区域，使用layoutPriority，让Spacer先拿到剩余的空间
-                Spacer().layoutPriority(1)
-                
-                selectFoodButton
-                
-                cancelFoodButton
+                    // 填满剩余的区域，使用layoutPriority，让Spacer先拿到剩余的空间
+                    Spacer().layoutPriority(1)
+                    
+                    selectFoodButton
+                    
+                    cancelFoodButton
+                }
+                .padding()
+                .maxWidth()
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: proxy.size.height)
+                .font(.title2.bold())
+                .mainButtonStyle()
+                .animation(.mySpring, value: shouldShowInfo)
+                .animation(.myEase, value: selectedFood)
             }
-            .padding()
-            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: UIScreen.main.bounds.height - 100)
-            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-            .mainButtonStyle()
-            .animation(.mySpring, value: shouldShowInfo)
-            .animation(.myEase, value: selectedFood)
+            .background(.bg2)
         }
-        .background(.bg2)
     }
 }
 

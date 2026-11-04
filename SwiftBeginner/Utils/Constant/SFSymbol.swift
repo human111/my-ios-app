@@ -15,6 +15,11 @@ enum SFSymbol: String {
     case xmark = "xmark.circle.fill"
     case forkAndKnife = "fork.knife"
     case info = "info.circle.fill"
+    case moon = "moon.fill"
+    case unitSign = "numbersign"
+    case house = "house.fill"
+    case list = "list.bullet"
+    case gear = "gearshape"
 }
 
 extension SFSymbol: View {

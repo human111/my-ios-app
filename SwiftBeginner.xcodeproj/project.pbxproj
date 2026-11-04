@@ -23,6 +23,8 @@
 		869CD1FE309A210000EF4AB0 /* FoodDetailSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869CD1FD309A210000EF4AB0 /* FoodDetailSheet.swift */; };
 		869CD200309A216600EF4AB0 /* Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869CD1FF309A216600EF4AB0 /* Sheet.swift */; };
 		869CD203309A238400EF4AB0 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869CD202309A238400EF4AB0 /* SFSymbol.swift */; };
+		869CD20B309B6C7400EF4AB0 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869CD20A309B6C7400EF4AB0 /* HomeScreen.swift */; };
+		869CD20E309B71EA00EF4AB0 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869CD20D309B71EA00EF4AB0 /* SettingsScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		869CD1FF309A216600EF4AB0 /* Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sheet.swift; sourceTree = "<group>"; };
 		869CD202309A238400EF4AB0 /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
 		869CD208309A253A00EF4AB0 /* One.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = One.md; sourceTree = "<group>"; };
+		869CD20A309B6C7400EF4AB0 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		869CD20D309B71EA00EF4AB0 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,8 @@
 		869CD1F4309A1CF700EF4AB0 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				869CD20C309B71DB00EF4AB0 /* SettingsScreen */,
+				869CD209309B6C5200EF4AB0 /* HomeScreen */,
 				869CD1F9309A1E9300EF4AB0 /* FoodPicker */,
 				869CD1F8309A1E8B00EF4AB0 /* FoodList */,
 			);
@@ -219,6 +225,22 @@
 			path = FAQ;
 			sourceTree = "<group>";
 		};
+		869CD209309B6C5200EF4AB0 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				869CD20A309B6C7400EF4AB0 /* HomeScreen.swift */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		869CD20C309B71DB00EF4AB0 /* SettingsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				869CD20D309B71EA00EF4AB0 /* SettingsScreen.swift */,
+			);
+			path = SettingsScreen;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -289,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				869CD20E309B71EA00EF4AB0 /* SettingsScreen.swift in Sources */,
 				86374FFD308F9842005D158F /* SuffixWrapper.swift in Sources */,
 				86374FFB308F9469005D158F /* Extensions.swift in Sources */,
 				869CD203309A238400EF4AB0 /* SFSymbol.swift in Sources */,
@@ -300,6 +323,7 @@
 				86375000309026B8005D158F /* ShapeStyleView.swift in Sources */,
 				86374FE0308B3986005D158F /* AppEntry.swift in Sources */,
 				86374FF6308EE54F005D158F /* Food.swift in Sources */,
+				869CD20B309B6C7400EF4AB0 /* HomeScreen.swift in Sources */,
 				869CD200309A216600EF4AB0 /* Sheet.swift in Sources */,
 				869CD1F33098C48B00EF4AB0 /* FoodForm.swift in Sources */,
 				8637500430921A72005D158F /* GeometryReaderView.swift in Sources */,

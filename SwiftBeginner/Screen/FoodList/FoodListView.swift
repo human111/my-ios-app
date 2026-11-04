@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct FoodListView: View {
-    @Environment(\.editMode) var editMode
+//    @Environment(\.editMode) var editMode
+    @State private var editMode: EditMode = .inactive
     @State private var foods = Food.examples
     @State private var selectedFoodID = Set<Food.ID>()
     
     @State private var sheet: Sheet?
     
-    var isEditing: Bool { editMode?.wrappedValue == .active }
+    var isEditing: Bool { editMode.isEditing }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -24,11 +25,17 @@ struct FoodListView: View {
             // 如果不想使用wrappedValue，可以用“$food in”的写法
             List($foods, editActions: .all, selection: $selectedFoodID, rowContent: buildFoodRaw)
             .listStyle(.plain)
+            .background {
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(.groupBg2)
+                    .ignoresSafeArea(.container, edges: .bottom)
+            }
             .padding(.horizontal)
             
         }
         .background(.groupBg)
         .safeAreaInset(edge: .bottom, content: buildFloatButton)
+        .environment(\.editMode, $editMode)
         .sheet(item: $sheet)
     }
 }
@@ -47,8 +54,9 @@ private extension FoodListView {
                 .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
                 
             
-            EditButton()
-                .buttonStyle(.bordered)
+            EditButton().buttonStyle(.bordered)
+            
+            addButton
         }.padding()
     }
     
@@ -57,8 +65,7 @@ private extension FoodListView {
             sheet = .newFood { foods.append($0) }
         } label: {
             SFSymbol.plus
-                .font(.system(size: 50))
-                .padding()
+                .font(.system(size: 40))
                 .symbolRenderingMode(.palette) // 使用色盘来给图片配色
                 .foregroundStyle(.white, Color.accentColor.gradient)
         }
@@ -85,6 +92,7 @@ private extension FoodListView {
                 .transition(.move(edge: .leading).combined(with: .opacity).animation(.easeInOut))
                 .opacity(isEditing ? 1 : 0)
                 .id(isEditing)
+                .padding(.bottom)
             
             // 这样写，是为了在进行编辑和查看切换的时候，新增按钮动画效果，在当前位置进行透明度的隐藏或显示。
             // 如果不用HStack和Spacer，切换时的效果，是添加按钮，从右边移动到中间，在这个过程中隐藏。
@@ -95,22 +103,28 @@ private extension FoodListView {
 //                    .opacity(isEditing ? 0 : 1)
 //                    .animation(.easeInOut, value: isEditing)
 //            }
-            addButton
-                .scaleEffect(isEditing ? 0.001 : 1)
-                .opacity(isEditing ? 0 : 1)
-                .animation(.easeInOut, value: isEditing)
-                .push(to: .trailing)
+            // 添加按钮移动到编辑按钮旁边了
+//            addButton
+//                .scaleEffect(isEditing ? 0.001 : 1)
+//                .opacity(isEditing ? 0 : 1)
+//                .animation(.easeInOut, value: isEditing)
+//                .push(to: .trailing)
         }
     }
     
     func buildFoodRaw(foodBinding: Binding<Food>) -> some View {
         let food = foodBinding.wrappedValue
         return HStack {
-            Text(food.name).padding(.vertical, 10)
-                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+            Text(food.name)
+                .font(.title3)
+                .padding(.vertical, 10)
+                .push(to: .leading)
                 .contentShape(Rectangle())
                 .onTapGesture {
-                    if isEditing { return }
+                    if isEditing {
+                        selectedFoodID.insert(food.id)
+                        return
+                    }
                     sheet = .foodDetail(food)
                 }
             
@@ -122,7 +136,7 @@ private extension FoodListView {
                         sheet = .editFood(foodBinding)
                     }
             }
-        }
+        }.listRowBackground(Color.clear)
     }
 }
 
