@@ -25,6 +25,8 @@
 		869CD203309A238400EF4AB0 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869CD202309A238400EF4AB0 /* SFSymbol.swift */; };
 		869CD20B309B6C7400EF4AB0 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869CD20A309B6C7400EF4AB0 /* HomeScreen.swift */; };
 		869CD20E309B71EA00EF4AB0 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869CD20D309B71EA00EF4AB0 /* SettingsScreen.swift */; };
+		869CD211309C417100EF4AB0 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869CD210309C417100EF4AB0 /* Unit.swift */; };
+		869CD213309C47A100EF4AB0 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869CD212309C47A100EF4AB0 /* UserDefaultsKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,9 @@
 		869CD208309A253A00EF4AB0 /* One.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = One.md; sourceTree = "<group>"; };
 		869CD20A309B6C7400EF4AB0 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		869CD20D309B71EA00EF4AB0 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
+		869CD20F309C33A400EF4AB0 /* Two.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Two.md; sourceTree = "<group>"; };
+		869CD210309C417100EF4AB0 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
+		869CD212309C47A100EF4AB0 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				869CD202309A238400EF4AB0 /* SFSymbol.swift */,
+				869CD210309C417100EF4AB0 /* Unit.swift */,
+				869CD212309C47A100EF4AB0 /* UserDefaultsKey.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -221,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				869CD208309A253A00EF4AB0 /* One.md */,
+				869CD20F309C33A400EF4AB0 /* Two.md */,
 			);
 			path = FAQ;
 			sourceTree = "<group>";
@@ -311,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				869CD213309C47A100EF4AB0 /* UserDefaultsKey.swift in Sources */,
 				869CD20E309B71EA00EF4AB0 /* SettingsScreen.swift in Sources */,
 				86374FFD308F9842005D158F /* SuffixWrapper.swift in Sources */,
 				86374FFB308F9469005D158F /* Extensions.swift in Sources */,
@@ -324,6 +333,7 @@
 				86374FE0308B3986005D158F /* AppEntry.swift in Sources */,
 				86374FF6308EE54F005D158F /* Food.swift in Sources */,
 				869CD20B309B6C7400EF4AB0 /* HomeScreen.swift in Sources */,
+				869CD211309C417100EF4AB0 /* Unit.swift in Sources */,
 				869CD200309A216600EF4AB0 /* Sheet.swift in Sources */,
 				869CD1F33098C48B00EF4AB0 /* FoodForm.swift in Sources */,
 				8637500430921A72005D158F /* GeometryReaderView.swift in Sources */,

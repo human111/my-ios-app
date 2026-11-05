@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 // 针对view下，按钮相关样式的打包
 extension View {
     // 这里建立方法，方法是通过实例本身去调用的
@@ -89,5 +90,16 @@ extension AnyLayout {
         let layout = condition ? AnyLayout(VStackLayout(spacing: 30)) : AnyLayout(HStackLayout(spacing: 30))
         
         return layout(content)
+    }
+}
+
+extension AppStorage {
+    // 由于使用UserDefaults的类型不同，所以针对不同的类型，需要写一次init方法
+    init(wrappedValue: Value, _ key: UserDefaults.Key, store: UserDefaults? = nil) where Value == Bool {
+        self.init(wrappedValue: wrappedValue, key.rawValue, store: store)
+    }
+    
+    init(wrappedValue: Value, _ key: UserDefaults.Key, store: UserDefaults? = nil) where Value: RawRepresentable, Value.RawValue == String {
+        self.init(wrappedValue: wrappedValue, key.rawValue, store: store)
     }
 }
