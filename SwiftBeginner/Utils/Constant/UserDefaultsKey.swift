@@ -12,6 +12,6 @@ extension UserDefaults {
         case shouldUseDarkMode
         case unit
         case startTab
-//        case foodList
+        case foodList
     }
 }

@@ -94,7 +94,7 @@ private enum Dialog: String {
                     UserDefaults.standard.removeObject(forKey: key.rawValue)
                 }
             case .resetFoodList:
-                fatalError()
+                UserDefaults.standard.removeObject(forKey: UserDefaults.Key.foodList.rawValue)
             case .inactive:
                 return
         }

@@ -8,7 +8,7 @@
 import Foundation
 
 struct Food: Equatable, Identifiable {
-    let id = UUID()
+    var id = UUID()
     
     var name: String
     var image: String
@@ -31,3 +31,5 @@ struct Food: Equatable, Identifiable {
     
     static var new: Food { Food(name: "", image: "") }
 }
+
+extension Food: Codable {}

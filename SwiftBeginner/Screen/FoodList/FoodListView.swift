@@ -10,7 +10,8 @@ import SwiftUI
 struct FoodListView: View {
 //    @Environment(\.editMode) var editMode
     @State private var editMode: EditMode = .inactive
-    @State private var foods = Food.examples
+//    @State private var foods = Food.examples
+    @AppStorage(.foodList) private var foods = Food.examples
     @State private var selectedFoodID = Set<Food.ID>()
     
     @State private var sheet: Sheet?

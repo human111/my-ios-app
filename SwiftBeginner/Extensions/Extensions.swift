@@ -103,3 +103,20 @@ extension AppStorage {
         self.init(wrappedValue: wrappedValue, key.rawValue, store: store)
     }
 }
+
+extension Array: RawRepresentable where Element: Codable {
+    // 解码，把一个数据转成需要的格式
+    public init?(rawValue: String) {
+        guard let data = rawValue.data(using: .utf8),
+              let array = try? JSONDecoder().decode(Self.self, from: data) else { return nil }
+        self = array
+    }
+    
+    public var rawValue: String {
+        guard let data = try? JSONEncoder().encode(self),
+              let string = String(data: data, encoding: .utf8)
+        else { return "" }
+        
+        return string
+    }
+}
