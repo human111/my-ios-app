@@ -17,7 +17,8 @@
     
     // 主要是方便ContentView中使用$calorie取值，例如：selectedFood!.$calorie
     var projectedValue: String {
-        wrappedValue.formatted() + " \(suffix)"
+        let tempSuffix = suffix.isEmpty ? "" : " \(suffix)"
+        return wrappedValue.formatted(.number.precision(.fractionLength(0...1))) + tempSuffix
     }
 }
 

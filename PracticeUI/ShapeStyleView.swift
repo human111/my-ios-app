@@ -11,20 +11,21 @@ struct ShapeStyleView: View {
     var body: some View {
         // VStack的子孩子，最多只能放10个，超过就会报错。常见的解决方案，可以使用Group去包装。
         // 这里的Circle().fill(.yellow).overlay等价下面的ZStack
-        if false {VStack {
-            //            Circle().fill(.teal)
-            //            Circle().fill(.teal.gradient)
-            //            Circle().fill(.image(.init("dinner"), scale: 0.2))
-            //            Text("Hello")
-            //                .font(.system(size: 100).bold())
-            //                .foregroundStyle(.linearGradient(colors: [.pink, .indigo], startPoint: .topLeading, endPoint: .bottomTrailing))
-            // 这里的overlay类似ZStack，也就是z轴方向
-            Circle().fill(.yellow).overlay {
-                Text("Hello")
-                    .font(.system(size: 100).bold())
-                    .foregroundStyle(.linearGradient(colors: [.pink, .indigo], startPoint: .topLeading, endPoint: .bottomTrailing))
-            }
-        }}
+//        if false {
+//            VStack {
+//            //            Circle().fill(.teal)
+//            //            Circle().fill(.teal.gradient)
+//            //            Circle().fill(.image(.init("dinner"), scale: 0.2))
+//            //            Text("Hello")
+//            //                .font(.system(size: 100).bold())
+//            //                .foregroundStyle(.linearGradient(colors: [.pink, .indigo], startPoint: .topLeading, endPoint: .bottomTrailing))
+//            // 这里的overlay类似ZStack，也就是z轴方向
+//            Circle().fill(.yellow).overlay {
+//                Text("Hello")
+//                    .font(.system(size: 100).bold())
+//                    .foregroundStyle(.linearGradient(colors: [.pink, .indigo], startPoint: .topLeading, endPoint: .bottomTrailing))
+//            }
+//        }}
         
         ZStack {
             Circle().fill(.yellow)
