@@ -10,10 +10,22 @@ import SwiftUI
 
 @main
 struct AppEntry: App {
+    init() {
+        applyTabBarBackground()
+    }
+    
     var body: some Scene {
         WindowGroup {
 //            FoodPickerScreen()
             HomeScreen()
         }
+    }
+    
+    func applyTabBarBackground() {
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithTransparentBackground()
+        tabBarAppearance.backgroundColor = .secondarySystemBackground.withAlphaComponent(0.3)
+        tabBarAppearance.backgroundEffect = UIBlurEffect(style: .systemChromeMaterial)
+        UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
     }
 }

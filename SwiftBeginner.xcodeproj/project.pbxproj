@@ -28,6 +28,7 @@
 		869CD211309C417100EF4AB0 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869CD210309C417100EF4AB0 /* Unit.swift */; };
 		869CD213309C47A100EF4AB0 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869CD212309C47A100EF4AB0 /* UserDefaultsKey.swift */; };
 		869CD21C309DADD700EF4AB0 /* SwiftBeginnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869CD21B309DADD700EF4AB0 /* SwiftBeginnerTests.swift */; };
+		869CD224309F565A00EF4AB0 /* TestCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869CD223309F565A00EF4AB0 /* TestCodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,9 @@
 		869CD212309C47A100EF4AB0 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		869CD219309DADD700EF4AB0 /* SwiftBeginnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftBeginnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		869CD21B309DADD700EF4AB0 /* SwiftBeginnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBeginnerTests.swift; sourceTree = "<group>"; };
+		869CD222309F500500EF4AB0 /* SwiftBeginner.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SwiftBeginner.xctestplan; sourceTree = "<group>"; };
+		869CD223309F565A00EF4AB0 /* TestCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCodable.swift; sourceTree = "<group>"; };
+		869CD225309F570900EF4AB0 /* Three.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Three.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 		86374FD3308B3986005D158F = {
 			isa = PBXGroup;
 			children = (
+				869CD222309F500500EF4AB0 /* SwiftBeginner.xctestplan */,
 				86374FDE308B3986005D158F /* SwiftBeginner */,
 				86374FFE3090268C005D158F /* PracticeUI */,
 				86374FF0308B41E9005D158F /* readme */,
@@ -232,6 +237,7 @@
 			children = (
 				869CD201309A235200EF4AB0 /* Constant */,
 				86374FFC308F9842005D158F /* SuffixWrapper.swift */,
+				869CD223309F565A00EF4AB0 /* TestCodable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 			children = (
 				869CD208309A253A00EF4AB0 /* One.md */,
 				869CD20F309C33A400EF4AB0 /* Two.md */,
+				869CD225309F570900EF4AB0 /* Three.md */,
 			);
 			path = FAQ;
 			sourceTree = "<group>";
@@ -343,6 +350,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 86374FD3308B3986005D158F;
 			productRefGroup = 86374FDD308B3986005D158F /* Products */;
@@ -396,6 +404,7 @@
 				869CD211309C417100EF4AB0 /* Unit.swift in Sources */,
 				869CD200309A216600EF4AB0 /* Sheet.swift in Sources */,
 				869CD1F33098C48B00EF4AB0 /* FoodForm.swift in Sources */,
+				869CD224309F565A00EF4AB0 /* TestCodable.swift in Sources */,
 				8637500430921A72005D158F /* GeometryReaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -5,17 +5,46 @@
 //  Created by ghy on 2026/10/26.
 //
 
-import Foundation
+import SwiftUI
 
 struct Food: Equatable, Identifiable {
     var id = UUID()
-    
     var name: String
     var image: String
-    @Suffix("大卡") var calorie: Double = .zero
-    @Suffix("g") var carb: Double      = .zero
-    @Suffix("g") var fat: Double       = .zero
-    @Suffix("g") var protein: Double   = .zero
+//    @Suffix var calorie: Double
+//    @Suffix var carb: Double
+//    @Suffix var fat: Double
+//    @Suffix var protein: Double
+    @Energy var calorie: Double
+    @Weight var carb: Double
+    @Weight var fat: Double
+    @Weight var protein: Double
+}
+
+extension Food {
+    static var new: Food { 
+        let preferredWeightUnit = WeightUnit.getPreferredUnit()
+        let preferredEnergyUnit = EnergyUnit.getPreferredUnit()
+        
+        return Food(
+            name: "",
+            image: "",
+            calorie: .init(wrappedValue: .zero, preferredEnergyUnit),
+            carb: .init(wrappedValue: .zero, preferredWeightUnit),
+            fat: .init(wrappedValue: .zero, preferredWeightUnit),
+            protein: .init(wrappedValue: .zero, preferredWeightUnit)
+        )
+    }
+    
+    private init(id: UUID = UUID(), name: String, image: String, calorie: Double, carb: Double, fat: Double, protein: Double) {
+        self.id = id
+        self.name = name
+        self.image = image
+        self._calorie = .init(wrappedValue: calorie, .cal)
+        self._carb    = .init(wrappedValue: carb, .gram)
+        self._fat     = .init(wrappedValue: fat, .gram)
+        self._protein = .init(wrappedValue: protein, .gram)
+    }
     
     static let examples = [
         Food(name: "汉堡", image: "🍔", calorie: 294, carb: 14, fat: 24, protein: 17),
@@ -28,8 +57,6 @@ struct Food: Equatable, Identifiable {
         Food(name: "牛肉面", image: "🐮🍜", calorie: 310, carb: 33.2, fat: 6, protein: 6),
         Food(name: "关东煮", image: "🍢", calorie: 90, carb: 4, fat: 5, protein: 7),
     ]
-    
-    static var new: Food { Food(name: "", image: "") }
 }
 
 extension Food: Codable {}

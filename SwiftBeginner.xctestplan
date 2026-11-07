@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "5D1E70FE-7157-45E1-913D-3B45F8D06E6B",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:SwiftBeginner.xcodeproj",
+      "identifier" : "86374FDB308B3986005D158F",
+      "name" : "SwiftBeginner"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:SwiftBeginner.xcodeproj",
+        "identifier" : "869CD218309DADD700EF4AB0",
+        "name" : "SwiftBeginnerTests"
+      }
+    }
+  ],
+  "version" : 1
+}

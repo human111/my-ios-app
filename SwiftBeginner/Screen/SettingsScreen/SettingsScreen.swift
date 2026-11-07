@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsScreen: View {
     @AppStorage(.shouldUseDarkMode) private var shouldUseDarkMode: Bool = false
-    @AppStorage(.unit) private var unit: Unit = .gram
+    @AppStorage(.preferredWeightUnit) private var unit: WeightUnit
     @AppStorage(.startTab) private var startTab: HomeScreen.Tab = .picker
     
     @State private var confirmationDialog: Dialog = .inactive
@@ -34,7 +34,7 @@ struct SettingsScreen: View {
 
                 // 选择框
                 Picker(selection: $unit) {
-                    ForEach(Unit.allCases) { $0 }
+                    ForEach(WeightUnit.allCases) { $0 }
                 } label: {
                     Label("单位", systemImage: .unitSign)
                 }
@@ -89,7 +89,7 @@ private enum Dialog: String {
     func action() {
         switch self {
             case .resetSettings:
-                let keys: [UserDefaults.Key] = [.shouldUseDarkMode, .unit, .startTab]
+                let keys: [UserDefaults.Key] = [.shouldUseDarkMode, .preferredWeightUnit, .startTab]
                 for key in keys {
                     UserDefaults.standard.removeObject(forKey: key.rawValue)
                 }

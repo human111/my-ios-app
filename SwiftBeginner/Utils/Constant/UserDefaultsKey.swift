@@ -10,8 +10,11 @@ import Foundation
 extension UserDefaults {
     enum Key: String {
         case shouldUseDarkMode
-        case unit
+        // 用preferredEnergyUnit和preferredWeightUnit替代了
+//        case unit
         case startTab
         case foodList
+        case preferredEnergyUnit
+        case preferredWeightUnit
     }
 }

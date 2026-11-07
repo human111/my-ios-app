@@ -104,6 +104,13 @@ extension AppStorage {
     }
 }
 
+extension AppStorage where Value: MyUnitProtocol {
+    // 给MyUnitProtocol协议类型的AppStorage，添加初始值defaultUnit
+    init(wrappedValue: Value = .defaultUnit, _ key: UserDefaults.Key, store: UserDefaults? = nil) where Value: RawRepresentable, Value.RawValue == String {
+        self.init(wrappedValue: wrappedValue, key.rawValue, store: store)
+    }
+}
+
 extension Array: RawRepresentable where Element: Codable {
     // 解码，把一个数据转成需要的格式
     public init?(rawValue: String) {
