@@ -29,6 +29,7 @@
 		869CD213309C47A100EF4AB0 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869CD212309C47A100EF4AB0 /* UserDefaultsKey.swift */; };
 		869CD21C309DADD700EF4AB0 /* SwiftBeginnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869CD21B309DADD700EF4AB0 /* SwiftBeginnerTests.swift */; };
 		869CD224309F565A00EF4AB0 /* TestCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869CD223309F565A00EF4AB0 /* TestCodable.swift */; };
+		869CD22830A1AE1F00EF4AB0 /* AsyncImageDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869CD22730A1AE1F00EF4AB0 /* AsyncImageDemo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		869CD222309F500500EF4AB0 /* SwiftBeginner.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SwiftBeginner.xctestplan; sourceTree = "<group>"; };
 		869CD223309F565A00EF4AB0 /* TestCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCodable.swift; sourceTree = "<group>"; };
 		869CD225309F570900EF4AB0 /* Three.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Three.md; sourceTree = "<group>"; };
+		869CD22730A1AE1F00EF4AB0 /* AsyncImageDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageDemo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 		86374FFE3090268C005D158F /* PracticeUI */ = {
 			isa = PBXGroup;
 			children = (
+				869CD22630A1ADCA00EF4AB0 /* AsyncRequest */,
 				86374FFF309026B8005D158F /* ShapeStyleView.swift */,
 				8637500330921A72005D158F /* GeometryReaderView.swift */,
 				8637500530922A9C005D158F /* GeometryReaderView1.swift */,
@@ -286,6 +289,14 @@
 			path = SwiftBeginnerTests;
 			sourceTree = "<group>";
 		};
+		869CD22630A1ADCA00EF4AB0 /* AsyncRequest */ = {
+			isa = PBXGroup;
+			children = (
+				869CD22730A1AE1F00EF4AB0 /* AsyncImageDemo.swift */,
+			);
+			path = AsyncRequest;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -404,6 +415,7 @@
 				869CD211309C417100EF4AB0 /* Unit.swift in Sources */,
 				869CD200309A216600EF4AB0 /* Sheet.swift in Sources */,
 				869CD1F33098C48B00EF4AB0 /* FoodForm.swift in Sources */,
+				869CD22830A1AE1F00EF4AB0 /* AsyncImageDemo.swift in Sources */,
 				869CD224309F565A00EF4AB0 /* TestCodable.swift in Sources */,
 				8637500430921A72005D158F /* GeometryReaderView.swift in Sources */,
 			);
