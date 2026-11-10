@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='macos' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='UserCodable'/>
+        <page name='ResponseCodable'/>
+        <page name='ResponseCodable1'/>
+        <page name='ResponseCodable2'/>
+        <page name='ResponseCodable3'/>
+        <page name='ResponseCodable4'/>
+        <page name='ResponseCodable5'/>
+        <page name='ResponseCodable6'/>
+    </pages>
+</playground>

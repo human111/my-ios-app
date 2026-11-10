@@ -77,7 +77,9 @@ struct MyAsyncImage: View {
 
 struct AsyncImageDemo: View {
     @State private var id: UUID = UUID()
-    let url = URL(string: "https://images.unsplash.com/photo-1678880032033-d954b408963c?w=500")!
+    // http://localhost:3000/images/1.jpg
+    // https://images.unsplash.com/photo-1678880032033-d954b408963c?w=500
+    let url = URL(string: "http://localhost:3000/images/5.jpg")!
     
     var body: some View {
         VStack {
