@@ -20,6 +20,8 @@ enum SFSymbol: String {
     case house = "house.fill"
     case list = "list.bullet"
     case gear = "gearshape"
+    case heart = "heart.fill"
+    case photo = "photo.on.rectangle.angled"
 }
 
 extension SFSymbol: View {

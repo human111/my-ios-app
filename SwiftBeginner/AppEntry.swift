@@ -17,7 +17,7 @@ struct AppEntry: App {
     var body: some Scene {
         WindowGroup {
 //            FoodPickerScreen()
-            HomeScreen()
+            HomeScreen().environmentObject(CatAPIManager.shared)
         }
     }
     

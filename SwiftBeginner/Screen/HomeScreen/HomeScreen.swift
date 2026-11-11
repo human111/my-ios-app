@@ -12,7 +12,7 @@ struct HomeScreen: View {
 //    @State var tab: Tab = .settings
     @State var tab: Tab = {
         let rawValue = UserDefaults.standard.string(forKey: UserDefaults.Key.startTab.rawValue) ?? ""
-        return Tab(rawValue: rawValue) ?? .picker
+        return Tab(rawValue: rawValue) ?? .images
     }()
     
     var body: some View {
@@ -24,7 +24,7 @@ struct HomeScreen: View {
 
 extension HomeScreen {
     enum Tab: String, View, CaseIterable {
-        case picker, list, settings
+        case picker, list, settings, images, favorites
 
         var body: some View {
             content.tabItem { tabLabel.labelStyle(.iconOnly) }
@@ -39,6 +39,10 @@ extension HomeScreen {
                     FoodListView()
                 case .settings:
                     SettingsScreen()
+                case .images:
+                    CatImageScreen()
+                case .favorites:
+                    FavoriteScreen()
             }
         }
 
@@ -50,6 +54,10 @@ extension HomeScreen {
                     return Label("List", systemImage: .list)
                 case .settings:
                     return Label("Settings", systemImage: .gear)
+                case .images:
+                    return Label("Cat", systemImage: .photo)
+                case .favorites:
+                    return Label("Favorites", systemImage: .heart)
             }
         }
     }

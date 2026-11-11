@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8619C2E230A4A5EB00CEFEA3 /* CatImageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8619C2E130A4A5EB00CEFEA3 /* CatImageScreen.swift */; };
+		8619C2E430A4A5FB00CEFEA3 /* FavoriteScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8619C2E330A4A5FB00CEFEA3 /* FavoriteScreen.swift */; };
+		8619C2E730A4A88A00CEFEA3 /* CatAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8619C2E630A4A88A00CEFEA3 /* CatAPIManager.swift */; };
+		8619C2E930A4B7D700CEFEA3 /* CatImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8619C2E830A4B7D700CEFEA3 /* CatImageViewModel.swift */; };
+		8619C2EB30A4B96100CEFEA3 /* FavoriteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8619C2EA30A4B96100CEFEA3 /* FavoriteItem.swift */; };
+		8619C2ED30A4BE1F00CEFEA3 /* CatAPIManager+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8619C2EC30A4BE1F00CEFEA3 /* CatAPIManager+.swift */; };
+		8619C2EF30A4C0D000CEFEA3 /* CatImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8619C2EE30A4C0D000CEFEA3 /* CatImage+.swift */; };
+		8619C2F130A4C54D00CEFEA3 /* Operator+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8619C2F030A4C54D00CEFEA3 /* Operator+.swift */; };
+		8619C2F330A4C6A800CEFEA3 /* CatImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8619C2F230A4C6A800CEFEA3 /* CatImageView.swift */; };
 		86374FE0308B3986005D158F /* AppEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86374FDF308B3986005D158F /* AppEntry.swift */; };
 		86374FE2308B3986005D158F /* FoodPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86374FE1308B3986005D158F /* FoodPickerScreen.swift */; };
 		86374FE4308B3989005D158F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86374FE3308B3989005D158F /* Assets.xcassets */; };
@@ -43,6 +52,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8619C2E130A4A5EB00CEFEA3 /* CatImageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatImageScreen.swift; sourceTree = "<group>"; };
+		8619C2E330A4A5FB00CEFEA3 /* FavoriteScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteScreen.swift; sourceTree = "<group>"; };
+		8619C2E630A4A88A00CEFEA3 /* CatAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAPIManager.swift; sourceTree = "<group>"; };
+		8619C2E830A4B7D700CEFEA3 /* CatImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatImageViewModel.swift; sourceTree = "<group>"; };
+		8619C2EA30A4B96100CEFEA3 /* FavoriteItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteItem.swift; sourceTree = "<group>"; };
+		8619C2EC30A4BE1F00CEFEA3 /* CatAPIManager+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatAPIManager+.swift"; sourceTree = "<group>"; };
+		8619C2EE30A4C0D000CEFEA3 /* CatImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatImage+.swift"; sourceTree = "<group>"; };
+		8619C2F030A4C54D00CEFEA3 /* Operator+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Operator+.swift"; sourceTree = "<group>"; };
+		8619C2F230A4C6A800CEFEA3 /* CatImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatImageView.swift; sourceTree = "<group>"; };
 		86374FDC308B3986005D158F /* SwiftBeginner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftBeginner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86374FDF308B3986005D158F /* AppEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEntry.swift; sourceTree = "<group>"; };
 		86374FE1308B3986005D158F /* FoodPickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPickerScreen.swift; sourceTree = "<group>"; };
@@ -97,6 +115,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8619C2DF30A4A50B00CEFEA3 /* CatImageScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8619C2E130A4A5EB00CEFEA3 /* CatImageScreen.swift */,
+			);
+			path = CatImageScreen;
+			sourceTree = "<group>";
+		};
+		8619C2E030A4A53900CEFEA3 /* FavoriteScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8619C2E330A4A5FB00CEFEA3 /* FavoriteScreen.swift */,
+			);
+			path = FavoriteScreen;
+			sourceTree = "<group>";
+		};
+		8619C2E530A4A86000CEFEA3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8619C2E630A4A88A00CEFEA3 /* CatAPIManager.swift */,
+				8619C2EC30A4BE1F00CEFEA3 /* CatAPIManager+.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		86374FD3308B3986005D158F = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +167,7 @@
 				86374FDF308B3986005D158F /* AppEntry.swift */,
 				869CD1FB309A1EDB00EF4AB0 /* CommonViews */,
 				869CD1F4309A1CF700EF4AB0 /* Screen */,
+				8619C2E530A4A86000CEFEA3 /* Services */,
 				869CD1F5309A1DE100EF4AB0 /* Model */,
 				869CD1F6309A1E0200EF4AB0 /* Extensions */,
 				869CD1FC309A1F6600EF4AB0 /* Utils */,
@@ -168,6 +212,8 @@
 		869CD1F4309A1CF700EF4AB0 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				8619C2E030A4A53900CEFEA3 /* FavoriteScreen */,
+				8619C2DF30A4A50B00CEFEA3 /* CatImageScreen */,
 				869CD20C309B71DB00EF4AB0 /* SettingsScreen */,
 				869CD209309B6C5200EF4AB0 /* HomeScreen */,
 				869CD1F9309A1E9300EF4AB0 /* FoodPicker */,
@@ -180,6 +226,8 @@
 			isa = PBXGroup;
 			children = (
 				86374FF5308EE54F005D158F /* Food.swift */,
+				8619C2E830A4B7D700CEFEA3 /* CatImageViewModel.swift */,
+				8619C2EA30A4B96100CEFEA3 /* FavoriteItem.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -189,6 +237,8 @@
 			children = (
 				86374FFA308F9469005D158F /* Extensions.swift */,
 				86374FF8308EF05E005D158F /* PreviewDevice.swift */,
+				8619C2EE30A4C0D000CEFEA3 /* CatImage+.swift */,
+				8619C2F030A4C54D00CEFEA3 /* Operator+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -231,6 +281,7 @@
 		869CD1FB309A1EDB00EF4AB0 /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
+				8619C2F230A4C6A800CEFEA3 /* CatImageView.swift */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -399,11 +450,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				869CD213309C47A100EF4AB0 /* UserDefaultsKey.swift in Sources */,
+				8619C2E230A4A5EB00CEFEA3 /* CatImageScreen.swift in Sources */,
+				8619C2F330A4C6A800CEFEA3 /* CatImageView.swift in Sources */,
 				869CD20E309B71EA00EF4AB0 /* SettingsScreen.swift in Sources */,
 				86374FFD308F9842005D158F /* SuffixWrapper.swift in Sources */,
 				86374FFB308F9469005D158F /* Extensions.swift in Sources */,
 				869CD203309A238400EF4AB0 /* SFSymbol.swift in Sources */,
 				86374FF9308EF05E005D158F /* PreviewDevice.swift in Sources */,
+				8619C2ED30A4BE1F00CEFEA3 /* CatAPIManager+.swift in Sources */,
+				8619C2E430A4A5FB00CEFEA3 /* FavoriteScreen.swift in Sources */,
+				8619C2F130A4C54D00CEFEA3 /* Operator+.swift in Sources */,
 				86374FE2308B3986005D158F /* FoodPickerScreen.swift in Sources */,
 				869CD1FE309A210000EF4AB0 /* FoodDetailSheet.swift in Sources */,
 				863750023090D6DB005D158F /* FoodListView.swift in Sources */,
@@ -412,10 +468,14 @@
 				86374FE0308B3986005D158F /* AppEntry.swift in Sources */,
 				86374FF6308EE54F005D158F /* Food.swift in Sources */,
 				869CD20B309B6C7400EF4AB0 /* HomeScreen.swift in Sources */,
+				8619C2EB30A4B96100CEFEA3 /* FavoriteItem.swift in Sources */,
 				869CD211309C417100EF4AB0 /* Unit.swift in Sources */,
+				8619C2E930A4B7D700CEFEA3 /* CatImageViewModel.swift in Sources */,
 				869CD200309A216600EF4AB0 /* Sheet.swift in Sources */,
+				8619C2E730A4A88A00CEFEA3 /* CatAPIManager.swift in Sources */,
 				869CD1F33098C48B00EF4AB0 /* FoodForm.swift in Sources */,
 				869CD22830A1AE1F00EF4AB0 /* AsyncImageDemo.swift in Sources */,
+				8619C2EF30A4C0D000CEFEA3 /* CatImage+.swift in Sources */,
 				869CD224309F565A00EF4AB0 /* TestCodable.swift in Sources */,
 				8637500430921A72005D158F /* GeometryReaderView.swift in Sources */,
 			);

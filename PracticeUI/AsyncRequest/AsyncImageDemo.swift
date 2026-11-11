@@ -7,21 +7,22 @@
 
 import SwiftUI
 
-extension URLSession {
-    static let imageSession: URLSession = {
-        let config = URLSessionConfiguration.default
-        config.urlCache = .imageCache
-        
-        return .init(configuration: config)
-    }()
-}
+// 这段扩展已经迁移到Extensions/CatImage+.swift文件中了
+//extension URLSession {
+//    static let imageSession: URLSession = {
+//        let config = URLSessionConfiguration.default
+//        config.urlCache = .imageCache
+//        
+//        return .init(configuration: config)
+//    }()
+//}
 
-extension URLCache {
-    static let imageCache: URLCache = {
-        .init(memoryCapacity: 20 * 1024 * 1024,
-              diskCapacity: 30 * 1024 * 1024)
-    }()
-}
+//private extension URLCache {
+//    static let imageCache: URLCache = {
+//        .init(memoryCapacity: 20 * 1024 * 1024,
+//              diskCapacity: 30 * 1024 * 1024)
+//    }()
+//}
 
 struct MyAsyncImage: View {
     @State private var phase: AsyncImagePhase
@@ -106,7 +107,7 @@ struct AsyncImageDemo: View {
 //            }.id(id)
             
             // 方式三 封装加上缓存
-            MyAsyncImage(url: url).id(id).frame(width: 360)
+            MyAsyncImage(url: url).id(id).frame(width: 390)
             
             Button("重新整理") {
                 // 通过点击按钮替换id，让图片强制重新加载
